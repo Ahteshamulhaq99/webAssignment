@@ -1,0 +1,58 @@
+*{
+    color: #ffff;
+    font: 1em sans-serif;
+}
+body{
+    align-items: center;
+    padding: 4cm;
+    
+}
+label{
+    margin-left: 20px;
+    
+    
+                
+}
+form{
+    background-color: #6A58CE;
+    border-radius: 1cm;
+    padding: 1cm;
+}
+label,input{
+    
+    margin:5px;
+}
+table{
+    margin-left: 100px;
+}
+h1 center u {
+    font-size: 5mm;
+    color:#6A58CE ;
+}
+.button{
+    color: #000;
+}
+input{
+    color: #000;
+    border-radius: 10px;
+   
+}
+textarea{
+    display: inline;
+    color: #000;
+    margin-left:1cm;
+    border-radius: 10px;
+}
+#thank center{
+    color: green;
+    font-size: 1cm;
+}
+#sub center{
+    color: purple;
+    font-size: 6mm;
+}
+#back center{
+    color: purple;
+    background-color: seashell;
+    
+    }

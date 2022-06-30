@@ -1,0 +1,165 @@
+.navbar{
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+   
+}
+.navbar-nav{
+    margin-left: 50%;
+}
+.nav-item{
+   margin-left: auto;
+}
+.d-block{
+    margin-top: 56px;
+}
+.slide{
+    
+   max-width:100%;
+    z-index: -1;
+}
+.icon{
+    margin-left: 30px;
+    width: 65px;
+   position: relative;
+   top: 10px;
+        
+}
+.card-title{
+    margin-left: 40px;
+    flex-direction: row;
+    position: relative;
+    left: 80px;
+    bottom: 30px;
+}
+.card{
+   min-width:300px;
+     display: inline-flex;
+    margin: 10px; 
+    box-shadow: 5px 5px #888888;
+    border-color: green;
+    border-width: 2px;
+    
+}
+@media only screen and (min-width: 767px) {
+    .mcard{
+        width: 25% !important;      
+    }
+ 
+}
+
+@media only screen and (max-width: 768px) {
+    .mcard{
+        width: 70% !important;
+        margin-left: 0% !important;     
+    }
+ 
+}
+.mcard{
+    min-width:200px !important;
+     display: inline-flex;
+    /* margin: 10px;  */
+    box-shadow: 5px 5px #888888;
+    border-color: green;
+    border-width: 2px;
+    max-width: 300px;
+
+}
+/* @media only screen and (max-width: 767px) {
+.mcard{
+    min-width: 300px !important;
+} */
+
+.product:hover{
+    box-shadow: 5px 5px #888888;
+    border: green solid 3px;
+}
+@media only screen and (min-width: 767px) {
+    .card{
+        width: 90%;      
+    }
+ 
+}
+
+@media only screen and (max-width: 768px) {
+    .card{
+        width: 50%;
+        margin-left: 20%;     
+    }
+ 
+}
+  .cardBody{
+    margin-left: 10%;
+  }
+  .productPic{
+      max-width: 350px;
+  }
+  .product{
+      display: inline-block;
+      margin-top: 50px;
+      border-radius: 2%;
+  }
+  .productTitle{
+      position: relative;
+      left: 35%;
+      color: black;
+  }
+  @media only screen and (max-width: 450px) {
+    .productPic{
+        max-width: 65%;
+        min-width: 250px;
+    } 
+}
+.prodBlock{
+    margin-left: 10%;
+  
+}
+.card-img-top{
+    
+    width: 100%;
+}
+.agg
+{
+    position: relative;
+    left: 20px;
+}
+.a-card{
+    max-width: 100%;
+    height: 200px;
+}
+.footer{
+    background-color: green ;
+color: white;
+height: 72PX;
+}
+form{
+    margin-left: 10% !important;
+    
+}
+/*logo css*/
+.logo{
+    
+   background-color: green;
+   border-radius: 50%;
+   font-size: 30px;
+   color: green;
+}
+.logo1{
+    font-size:30px;
+    position: relative;
+    left: -30px;
+    top: -3px;
+}
+.logo2{
+    font-size: 1em;
+    position: relative;
+    left:-23px;
+    top: -11px;
+}
+.logo3{
+    position: relative;
+    left: -75px;
+    font-size: 10px;
+}
+
+

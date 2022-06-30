@@ -1,0 +1,104 @@
+<html>
+    <head>
+        <title>saylaani form</title>
+        <link rel="stylesheet" href="style1.css">
+    </head>
+    <body>
+       <center> <img src="images/logo.jpg" alt="saylaani"></center>
+        <h1><center> <u>  STUDENT REGISTERATION FORM</u></center></h1>
+        <form action="submitted.html" >
+        <label for="firstname">FIRST NAME</label> 
+        <input type="text" name="firstname" required> <br>
+        <label for="last name">LAST NAME</label>
+        <input type="text" name="lastname" required><br>
+        <label for="date">DATE OF BIRTH</label>
+        <input type="date" name="date"><br>
+        <label for="email" >EMAIL ID</label>
+        <input type="email" name="email" required><br>
+        <label for="mobileno">MOBILE NUMBER</label>
+        <input type="tel" name="mobileno" required><br>
+        <label for="gender">GENDER</label>
+        <label for="male">Male</label>
+        <input type="radio" name="gender">
+        <label for="female">Female</label>
+        <input type="radio" name="gender"><br>
+        <label for="address">ADDRESS</label><br>
+        <textarea name="address" id="" cols="30" rows="10"></textarea><br>
+        <label for="city">CITY</label>
+        <input type="text" name="city" id=""><br>
+        <label for="pin">PIN CODE</label>
+        <input type="number" name="pin" required> <br>
+        <label for="state">STATE</label>
+        <input type="text" name="state" id=""><br>
+        <label for="country">COUNTRY</label>
+        <input type="text" name="country"><br>
+        <label for="hobby">HOBBIES</label><br>
+       
+       <div> <label for="drawing">Drawing</label>
+        <input type="radio" name="hobby">
+        <label for="singing">Singing</label>
+        <input type="radio" name="hobby">
+        <label for="dancing">Dancing</label>
+        <input type="radio" name="hobby">
+        <label for="sketching">Sketching</label>
+        <input type="radio" name="hobby">
+        <label for="other">other</label>
+        <input type="radio" name="hobby">
+        <input type="text"><br>
+        <label for="table">QUALIFICATION</label>
+        <table name="table">
+        </div>
+            <thead>
+                <th>S.no</th>
+                <th>Examination</th>
+                <th>Board</th>
+                <th>Percentage</th>
+                <th>Year Of Passing</th>
+            </thead>
+            <tr>
+                <td>1</td>
+                <td>class X</td>
+                <td> <input type="text" required> </td>
+                <td> <input type="percentage" required> </td>
+                <td> <input type="year" required></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>class XII</td>
+                <td> <input type="text"> </td>
+                <td> <input type="percentage"> </td>
+                <td> <input type="year"></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Graduation</td>
+                <td> <input type="text"> </td>
+                <td> <input type="percentage"> </td>
+                <td> <input type="year"></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Master</td>
+                <td> <input type="text"> </td>
+                <td> <input type="percentage"> </td>
+                <td> <input type="year"></td>
+            </tr>
+        </table>
+            <label for="coures" >COURSE <BR>APPLIED FOR</label><br>
+           <div> <label for="bca">BCA</label>
+            <input type="radio" name="course">
+            <label for="bcom">B.COM</label>
+            <input type="radio" name="course">
+            <label for="bsc">BSC</label>
+            <input type="radio" name="course">
+            <label for="ba">BA</label>
+            <input type="radio" name="course"><br>
+            <center> <input class="button" type="submit"></center>
+            <center> <input class="button" type="reset"></center>
+            
+        </div>
+       
+    </form>
+        
+    </body>
+</html>

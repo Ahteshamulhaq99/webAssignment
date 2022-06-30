@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-analytics.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyBOTSWMlbP1n9ETUb2lcj1XGX_JBGT5X2M",
+            authDomain: "chap-app-9283e.firebaseapp.com",
+            databaseURL: "https://chap-app-9283e.firebaseio.com",
+            projectId: "chap-app-9283e",
+            storageBucket: "chap-app-9283e.appspot.com",
+            messagingSenderId: "371005360764",
+            appId: "1:371005360764:web:ca9f0d0eab9ac66e64d7f9",
+            measurementId: "G-9QD9XLP7WE"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+
+</head>
+
+<body>
+    <span class="top"></span>
+
+
+    <div class="main card container-fluid bg-white">
+        <div class="row">
+            <div class="left textBox2 card col-md-4 d-none d-md-block" id="chatlist">
+                <div class="card-header row ">
+                    <div class="col-3 row">
+                        <img class="user rounded-circle" id="userImgs" src="img/profile.png" alt="">
+                        
+                    </div>
+                    <div id='userName' class="col-7 col-lg-7"> </div>
+                    <div class="d-md-none" >
+                        <a href="#" class="col-2 col-lg-2" onclick="back()">b</a>
+                    </div>
+                    <div class="drop-left">
+                    <span class="dropdown-toggle col-1 col-lg-1" data-toggle="dropdown">
+                        <img src="img/ellipse.png" alt="" width="15px " height="20px">
+                    </span>
+                    <div class="dropdown-menu ">
+                        <a href="#" id="signin" class="dropdown-item" onclick="signinGoogle()">sign in</a>
+                        <a href="#" id="signout" class="dropdown-item" style="display: none;" onclick="signout()">sign out</a>
+                    </div>
+                    </div>
+                </div>
+                <div class="search ">
+                    <input class="textBox textBox1 form-control form-rounded" placeholder="search" type="text">
+
+                </div>
+                <div class="card">
+                    <ul class="list-group list-group-flush">
+                        <li class=" list-group-item list-group-item-action" onclick="startChat(1)">
+                            <div class="row friendList">
+                                <div class="pic col-md-3 ">
+                                    <img class="friend" src="img/profile.png" alt="">
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="name"> Friend Name</div>
+                                    <div class="underName"> Any message type by friend</div>
+                                </div>
+                            </div>
+                        </li>
+                       
+
+                    </ul>
+                </div>
+
+            </div>
+
+            <div id="chatPanel" class="right textBox2 col-md-8 card " style="display: none;">
+                <div class="card-header  row">
+                    <a href="#" class="d-md-none" onclick="chatList()">back</a>
+                    <img class="user" src="img/profile.png" alt="">
+                    <div class="head">
+                        <div class="name"> My friend</div>
+                        <div class="underName">last seen</div>
+                    </div>
+                </div>
+                <div id="msgBox" class="chat h-100">
+
+                    <div class="row msg msg1">
+                        <img src="img/profile.png" class="send" alt="">
+                        <div class="message recieveMsg">
+                            <div class="text"> who
+                                skikikskiiiiiiiiiiiiiiiiiiiiwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiare
+                                you</div>
+                            <div class="time underName float-right">12:30 pm</div>
+                        </div>
+                    </div>
+
+                    <div id="sMsg" class=" msg msg2 " style="display: none;">
+                        <!-- <img src="img/profile.png" class="send" alt="">
+                            <div class="message  sendMsg">
+                                <div id="senderMsg" class="text"></div>
+                                <div class="time underName float-right">12:30 pm</div> 
+                            </div> -->
+
+                    </div>
+
+
+
+                </div>
+
+                <div class="card-footer footer">
+                    <div class="row type">
+                        <div class="col-md-1 col-sm-2 col-1"><img class="emoji" src="img/emoji.jpg" alt=""></div>
+                        <input id="textMsg" class="textBox2 textBox col-md-9 col-sm-8 col-9 form-control form-rounded"
+                            type="text" placeholder="type Message">
+                        <a href="#" class='col-md-1 col-sm-1 col-1'> <img onclick="sendMessage()" src="img/send.png"
+                                class="send sendIcon " alt=""></a>
+                    </div>
+                </div>
+
+            </div>
+            <div id="starter">
+                <img class="start" src="img/profile.png" alt="">
+                <a href="#" class="d-md-none" onclick="chatList()"> Go To List</a>
+             <div class="col-12 mg-10">
+
+                <!-- <button onclick="signinFb()" class="btn btn-primary">signIn fb</button> -->
+               </div>
+            </div>
+
+
+        </div>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+
+
+
+
+    <script src="app.js"></script>
+</body>
+
+</html>
